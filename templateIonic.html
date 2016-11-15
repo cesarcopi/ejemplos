@@ -1,0 +1,61 @@
+<ion-view view-title="Reporte {{::item.folio}}" id="report" class="report-details item-details">
+    <ion-content>
+        <div class="gallery" ng-if="item.images.length > 0">
+            <ion-slide-box on-slide-changed="" show-pager="true">
+              <ion-slide ng-repeat="image in item.images">
+                  <img class="image-list-thumb" alt=""
+                      image-lazy-src="{{image}}"
+                      lazy-scroll-resize="true"
+                      image-lazy-distance-from-right-to-load="100"
+                      image-lazy-loader="lines" />
+              </ion-slide>
+            </ion-slide-box>
+        </div>
+
+        <div class="stats button-bar tabs-icon-top">
+            <a class="tab-item">
+                <i class="icon ion-calendar"></i>
+                <span am-time-ago="item.date"></span><br>
+                Reportado
+            </a>
+
+            <a class="tab-item">
+                <i class="icon ion-eye"></i>
+                <span>{{item.metadata.confirms}}</span><br>confirmaciones
+            </a>
+
+            <a class="tab-item">
+                <i class="icon ion-thumbsdown"></i>
+                <span>{{item.metadata.unconfirms}}</span><br>falsas alarmas
+            </a>
+        </div>
+
+        <div class="padding">
+            {{::item.content}}
+        </div>
+
+        <div class="map"
+            ng-if="item.images.length > 1"
+            style="background-image: url({{::item.images[1]}})">
+
+            <div class="address item-icon-left">
+                <i class="icon ion-ios-location-outline"></i>
+                {{item.location.address_line1}}<br>
+                {{item.location.address_line2}}
+            </div>
+        </div>
+
+        <div class="button-bar tools">
+            <button class="confirm button button-full button-clear" ng-click="shareAnyWhere(item)">
+                <i class="icon ion-share"></i> Compartir
+            </button>
+        </div>
+
+        <div class="row tooltips">
+            <div class="col">
+                En redes sociales
+            </div>
+        </div>
+    </ion-content>
+
+</ion-view>

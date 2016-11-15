@@ -1,0 +1,101 @@
+/* 
+    Created on : Mar 3, 2015, 12:27:25 AM
+    Author     : césarContreras
+*/
+
+@import "../components/flat-ui/dist/css/vendor/bootstrap.min.css";
+@import "../components/flat-ui/less/flat-ui.less";
+@import "../components/fontawesome/less/font-awesome.less";
+
+/* Fuentes de fontawesome */
+@fa-font-path:   "../components/fontawesome/fonts/";
+/* Fuentes de Flat UI */
+@icon-font-path: "../components/flat-ui/fonts/glyphicons/";
+
+@import "variables.less";
+@import "wordpress.less";
+
+body {
+    font-family: @font-family-base;
+}
+
+.navbar {
+    border-radius: 0 !important;
+}
+
+.slider, 
+footer, 
+.sidebar {
+
+}
+
+.contenido {
+    margin-top: 15px;
+    margin-bottom: 15px;
+}
+
+.sidebar, .contenido {
+    min-height: 500px;
+    line-height: 200px;
+}
+
+footer {
+    padding-top: 30px;
+    min-height: 300px;
+    
+    color: @footer_font_color;
+    background-color: @footer_bg_color;
+    font-size: 1.1em;
+    
+    a {
+        color: @footer_link_color;
+    }
+    
+    h1, h2, h3, h4, h5, h6 {
+        color: @bmm_rojo;
+        font-size: 1.3em;
+        margin: 4px;
+    }
+    
+    label {
+        font-size: 19px;
+        font-weight: bold;
+        line-height: 1em;
+    }
+    
+    input[type="submit"] {
+        background-color: @bmm_rosa;
+        border: none;
+    }
+}
+
+header {
+    color: @bmm_negro;
+    background-color: @bmm_blanco;
+    
+    .bmm-menu-primary {
+        margin-bottom: 0 !important;
+        background-color: @bmm_amarillo;
+        
+        /* Oculta el logo del menu */
+        .navbar-brand {
+            display: none;
+        }
+        
+        .navbar-nav > li > a {
+            color: @bmm_negro;
+        }
+    }
+}
+
+.rev_slider_wrapper {
+    margin-bottom: 60px !important;
+}
+
+header {
+    padding-top: 20px;
+    
+    .bmm-menu-primary {
+        margin-top: 20px;
+    }
+}
